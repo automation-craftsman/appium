@@ -1,0 +1,32 @@
+
+[1] Command to start the emulator >
+
+        terminal: emulator -avd [device_name] &
+      powershell: Start-Process emulator -ArgumentList "-avd [device_name]" -WindowStyle Hidden
+
+
+[2] Command to install apk in the emulator >
+
+        adb install [path_to_apk]
+
+    If multiple emulators are running then,
+
+        adb -s [emulator_name or serial_number] install [path_to_apk]
+
+
+[3] Command to get the current package and activity name >
+
+    To access the emulator shell prompt:
+
+            adb shell
+
+        If multiple emulators are running then,
+
+            adb -s [emulator_serial_number] shell
+
+        and then,
+
+            dumpsys window displays | grep "CurrentFocus"
+
+    Note: The desired app needs to be open in the emulator.
+

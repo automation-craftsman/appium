@@ -7,7 +7,7 @@ import support.Utilities;
 
 public class DialerView extends Base {
 
-    private final By numberField = AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.android.dialer:id/digits\"]");
+    private final By numberField = AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.google.android.dialer:id/digits\"]");
     private final By dialButton = AppiumBy.accessibilityId("dial");
 
 //    Utilities utilities = new Utilities();

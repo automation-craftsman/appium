@@ -8,10 +8,11 @@ import views.MainView;
 
 public class T001_TestDial extends Base {
 
-    MainView mainView;
 
     @Test
     public void makeCall(){
+
+        MainView mainView = new MainView();
 
         // Opening the dialer
         DialerView dialerView = mainView.openDialer();

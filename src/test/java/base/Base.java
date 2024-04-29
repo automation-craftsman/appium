@@ -22,7 +22,7 @@ public class Base {
     public static void setup() throws URISyntaxException, IOException, InterruptedException {
 
         // Initiating Appium Server
-        server.initServer();
+//        server.initServer();
 
         UiAutomator2Options options = new UiAutomator2Options();
 
@@ -37,14 +37,13 @@ public class Base {
         // Desired Capabilities
         options.setDeviceName("emulator-5554");
 //        options.setApp(System.getProperty("user.dir") + "\\src\\test\\resources\\android.wdio.native.app.v1.0.8.apk");
-        options.setAppPackage("com.android.dialer");
-        options.setAppActivity("com.android.dialer.main.impl.MainActivity");
+        options.setAppPackage("com.google.android.dialer");
+        options.setAppActivity("com.google.android.dialer.extensions.GoogleDialtactsActivity");
 
         // Launching Appium Driver
         driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        System.out.println("Session ID - Setup: " + driver.getSessionId());
     }
 
     @AfterSuite
@@ -52,6 +51,6 @@ public class Base {
         // Quiting Appium Driver
         driver.quit();
         // Stopping Appium Server
-        server.stopServer();
+//        server.stopServer();
     }
 }
